@@ -5,7 +5,7 @@ class specialTask {
 	static int MinValidYear = 0; 
 	
 	public static void main(String[] args) {  
-		printBonusDatesBetween(2010, 2015); 
+		printBonusDatesBetween(0, 9999); 
 	}
 
 	static void printBonusDatesBetween(int fromYear, int toYear) {
@@ -39,11 +39,11 @@ class specialTask {
 	        rev = reverse(rev); 
 	  
 	        // The day and the month is taken oun of the reversed year string
-	        int day = Integer.parseInt(rev.substring(0, 2)); 
-	        int month = Integer.parseInt(rev.substring(2, 4)); 
+	        int month = Integer.parseInt(rev.substring(0, 2)); 
+	        int day = Integer.parseInt(rev.substring(2, 4)); 
 	  
 	        // If the current date is valid and reversed, it is printed out
-	        if (isValidDate(year, day, month)) 
+	        if (isValidDate(year, month, day)) 
 	        { 
 	        	String dayStr;
 	        	String monthStr;
@@ -62,7 +62,7 @@ class specialTask {
 	        		monthStr = String.valueOf(month);
 	        	}
 	        	
-	            System.out.print(str + "-" + dayStr + "-" + monthStr + "\n"); 
+	            System.out.print(str + "-" + monthStr + "-" + dayStr + "\n"); 
 	        } 
 	    } 
 	}
@@ -90,7 +90,7 @@ class specialTask {
 	  
 	// Returns true if given 
 	// year is valid or not. 
-	static boolean isValidDate(int year, int day, int month) 
+	static boolean isValidDate(int year, int month, int day) 
 	{ 
 	    // If year, month and day are not in given range 
 	    if (year > MaxValidYear || year < MinValidYear) 
